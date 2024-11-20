@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TextInput } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 
 export default function App() {
   return (
@@ -16,7 +16,7 @@ export default function App() {
         placeholder='Descrição da tarefa' 
         multiline/>
 
-      <view style={styles.buttonContainer}>
+      <View style={styles.buttonContainer}>
         <Button title='Salvar' 
           style={styles.buttongreen}
           color = 'darkgreen'
@@ -24,9 +24,11 @@ export default function App() {
           () => {
 
           }
-        }> 
-        </view>
+        }/> 
         </View>
+      </View>
+      
+      
   );
 }
 
