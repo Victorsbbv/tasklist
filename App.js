@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
+import TaskCard from './TaskCard';
 
 export default function App() {
   return (
@@ -11,21 +12,27 @@ export default function App() {
 
       <Text style={styles.label}>Descrição da Tarefa:</Text>
       <TextInput
-        style={styles.input}
         style={[styles.input, styles.textArea]}
         placeholder='Descrição da tarefa' 
         multiline/>
 
       <View style={styles.buttonContainer}>
         <Button title='Salvar' 
-          style={styles.buttongreen}
-          color = 'darkgreen'
-          onPress={
-          () => {
-
+          style={styles.buttonblue}
+          color = 'deepskyblue'
+          onPress={() => {
+          alert("TESTADO")
           }
         }/> 
         </View>
+
+        <TaskCard 
+        title={"Teste"}
+        desc={"Descrição Teste"}
+        status={"Done"}
+        onClick={()=>{
+          alert("Deletar")
+        }} />
       </View>
       
       
@@ -46,11 +53,12 @@ const styles = StyleSheet.create({
   },
 
   input: {
-    borderWidth: 1,
-    borderColor: 'red',
+    borderWidth: 3,
+    borderColor: 'fuchsia',
     borderRadius: 8,
     padding: 12,
     fontSize: 16,
+    backgroundColor: 'lightskyblue',
     marginBottom: 16
   },
 
@@ -60,11 +68,13 @@ const styles = StyleSheet.create({
   },
 
   buttonContainer: {
-    marginTop: 16
+    marginTop: 16,
+    borderColor: 'fuchsia',
+    borderWidth: 3,
+    borderRadius: 8
   },
-  buttongreen:{
-    backgroundColor: 'darkgreen',
-    borderRadius: 12
+  buttonblue:{
+    backgroundColor: 'deepskyblue'
   }
 
 });
